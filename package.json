@@ -1,0 +1,38 @@
+{
+  "name": "avalanche-id",
+  "version": "1.0.0",
+  "description": "Self-Sovereign Identity Infrastructure on Avalanche",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && cd contracts && npm install && cd ../frontend && npm install",
+    "build:contracts": "cd contracts && forge build",
+    "test:contracts": "cd contracts && forge test",
+    "deploy:fuji": "cd contracts && forge script script/Deploy.s.sol --rpc-url $FUJI_RPC_URL --broadcast --verify",
+    "deploy:sepolia": "cd contracts && forge script script/DeploySepolia.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast --verify",
+    "compile:circuits": "cd circuits && ./compile.sh",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "lint": "cd contracts && forge fmt && cd ../frontend && npm run lint",
+    "clean": "cd contracts && forge clean && cd ../frontend && rm -rf dist node_modules/.vite"
+  },
+  "keywords": [
+    "avalanche",
+    "identity",
+    "did",
+    "verifiable-credentials",
+    "zero-knowledge",
+    "chainlink",
+    "ccip",
+    "suzaku"
+  ],
+  "author": "Avalanche ID Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5",
+    "snarkjs": "^0.7.0"
+  }
+} 
