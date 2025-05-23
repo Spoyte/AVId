@@ -27,7 +27,78 @@ Digital identity management faces critical challenges in the Web3 ecosystem:
 ✅ **Verifiable Credentials**: Cryptographically secure, privacy-preserving credentials  
 ✅ **Cross-Chain Verification**: Identity verification across networks via Chainlink CCIP  
 ✅ **Zero-Knowledge Proofs**: Selective disclosure without revealing sensitive information  
-✅ **Suzaku Security**: Infrastructure protected by restaking and validator networks  
+✅ **Suzaku Security**: Infrastructure protected by restaking and validator networks
+
+## 🚀 Quick Start
+
+### Prerequisites
+```bash
+# Required tools
+node >= 18.0.0
+npm >= 9.0.0
+git
+foundry (for smart contract development)
+circom (for zero-knowledge circuits)
+```
+
+### Installation & Setup
+```bash
+# Clone the repository
+git clone <repository-url>
+cd avalanche_id
+
+# Install all dependencies
+npm run install:all
+
+# Setup environment variables
+cp .env.example .env
+# Edit .env with your configuration
+
+# Compile smart contracts
+npm run build:contracts
+
+# Compile ZK circuits
+npm run compile:circuits
+
+# Run tests
+npm run test:contracts
+
+# Deploy to Fuji testnet
+npm run deploy:fuji
+
+# Start frontend development server
+npm run dev:frontend
+```
+
+## 📁 Project Structure
+
+```
+avalanche_id/
+├── contracts/              # Smart contracts (Foundry)
+│   ├── src/
+│   │   ├── DIDRegistry.sol
+│   │   ├── CredentialManager.sol
+│   │   ├── ZKVerifier.sol
+│   │   └── CCIPGateway.sol
+│   ├── script/             # Deployment scripts
+│   ├── test/               # Contract tests
+│   └── foundry.toml        # Foundry config
+├── frontend/               # React application
+│   ├── src/
+│   │   ├── components/
+│   │   ├── config/
+│   │   └── App.tsx
+│   ├── package.json
+│   └── vite.config.ts
+├── circuits/               # ZK circuits
+│   ├── age-verification.circom
+│   ├── education-credential.circom
+│   └── compile.sh
+├── docs/                   # Documentation
+├── plan.md                 # Implementation plan
+├── package.json            # Root package.json
+└── README.md               # This file
+```  
 
 ## 🏗️ Architecture
 
